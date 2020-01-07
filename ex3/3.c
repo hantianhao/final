@@ -14,7 +14,16 @@ int main(int argc, char *argv[])
         printf("The program needs at least one integer parameter to run!\n");
         return 0 ;
     }
-    c = atof(argv[++a]);
+    if(isdigit(*argv[++a]))
+    {
+        c = atof(argv[a]);
+    }
+    else
+    {
+       c = EOF;
+        printf("The parameter has to be an integer format!\n");
+        return 0;
+    }
     while((--argc) > 0 )
     {
         if(isdigit(*argv[a]))
